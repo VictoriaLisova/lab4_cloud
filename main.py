@@ -1,4 +1,10 @@
+from flask import Flask
 
-if __name__ == '__main__':
-    print("This is the test program that says:")
-    print("Hello world")
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "This is the test program that says:<br>Hello world"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=3000)
